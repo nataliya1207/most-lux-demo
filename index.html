@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MOST LUX — автосервис в Самаре · Концепт WebNat</title>
+  <meta name="description" content="Неофициальный дизайн-концепт WebNat для MOST LUX: обслуживание автомобилей, кузовной ремонт, шиномонтаж. Самара, проезд Мальцева, 3. Демо без приёма заявок.">
+  <meta name="theme-color" content="#101010"><meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="assets/logo-original.png"><link rel="stylesheet" href="styles.css">
+  <link rel="preload" as="image" href="assets/hero.jpg"><script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Перейти к содержимому</a>
+<div class="concept">Неофициальный дизайн-концепт <strong>WebNat</strong><span> · Демо-сайт</span></div>
+<header class="header">
+  <a class="brand" href="#top" aria-label="MOST LUX — в начало"><img src="assets/logo-original.png" alt="MOST LUX, оригинальный логотип" width="70" height="70"><span>АВТОСЕРВИС<br><small>САМАРА</small></span></a>
+  <button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Меню <span aria-hidden="true">☰</span></button>
+  <nav id="navigation" aria-label="Основная навигация"><a href="#services">Услуги</a><a href="#comparison">До / После</a><a href="#portfolio">Портфолио</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a></nav>
+  <a class="header-phone" href="tel:+78463004555">+7 (846) 300-45-55 <span aria-hidden="true">↗</span></a>
+</header>
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <img class="hero-image" src="assets/hero.jpg" width="1600" height="900" fetchpriority="high" alt="Демонстрационное AI-фото: графитовый седан в мастерской с красными световыми акцентами">
+    <div class="hero-shade"></div>
+    <div class="hero-content wrap">
+      <p class="eyebrow"><span class="red-dot"></span> MOST LUX / САМАРА</p>
+      <h1 id="hero-title">ВАШ АВТОМОБИЛЬ.<br>НАШЕ <em>ДЕЛО.</em></h1>
+      <p class="hero-description">Техническое обслуживание и кузовной ремонт<br class="desktop"> легковых автомобилей в Самаре.</p>
+      <div class="actions"><a class="button primary" href="#request">Обсудить ремонт <span aria-hidden="true">↗</span></a><a class="button ghost" href="#services">Выбрать услугу <span aria-hidden="true">↓</span></a></div>
+      <p class="hero-location">Самара, проезд Мальцева, 3 <span>Пн–пт · 09:00–18:00</span></p>
+    </div>
+    <span class="photo-note">AI-изображение · демонстрация</span>
+    <div class="hero-bottom wrap"><span>ОБСЛУЖИВАНИЕ / КУЗОВ / ШИНЫ</span><a href="#services" aria-label="К услугам">ЛИСТАЙТЕ НИЖЕ <span aria-hidden="true">↓</span></a></div>
+  </section>
+  <div class="service-strip" aria-hidden="true"><span>ТОЧНОСТЬ В ДЕТАЛЯХ</span><b>+</b><span>ВНИМАНИЕ К АВТОМОБИЛЮ</span><b>+</b><span>MOST LUX</span><b>↗</b></div>
+
+  <section class="section wrap" id="services" aria-labelledby="services-title">
+    <div class="section-heading"><div><p class="eyebrow">01 / НАПРАВЛЕНИЯ</p><h2 id="services-title">СЕРВИС.<br>ПО СУЩЕСТВУ.</h2></div><p class="section-intro">От регулярного обслуживания до работы с кузовом. Выберите направление и уточните детали у сервиса.</p></div>
+    <div class="filters" role="group" aria-label="Фильтр услуг"><button class="active" data-filter="all" aria-pressed="true">Все услуги</button><button data-filter="maintenance" aria-pressed="false">Обслуживание</button><button data-filter="body" aria-pressed="false">Кузов</button><button data-filter="care" aria-pressed="false">Уход и шины</button></div>
+    <div class="services-grid">
+      <article class="service-card" data-category="maintenance"><div class="card-top"><span>01</span><span aria-hidden="true">⌁</span></div><h3>Техническое<br>обслуживание</h3><p>Базовое сервисное обслуживание легковых автомобилей.</p><div class="card-footer"><span>Стоимость уточняйте</span><a href="#request" data-service="Техническое обслуживание" aria-label="Обсудить техническое обслуживание">↗</a></div></article>
+      <article class="service-card" data-category="body"><div class="card-top"><span>02</span><span aria-hidden="true">◇</span></div><h3>Кузовной<br>ремонт</h3><p>Состав работ и способ восстановления — после оценки автомобиля.</p><div class="card-footer"><span>Стоимость уточняйте</span><a href="#request" data-service="Кузовной ремонт" aria-label="Обсудить кузовной ремонт">↗</a></div></article>
+      <article class="service-card" data-category="body"><div class="card-top"><span>03</span><span aria-hidden="true">◌</span></div><h3>Удаление вмятин<br>без покраски</h3><p>Возможность применения метода необходимо уточнить в сервисе.</p><div class="card-footer"><span>Стоимость уточняйте</span><a href="#request" data-service="Удаление вмятин без покраски" aria-label="Обсудить удаление вмятин">↗</a></div></article>
+      <article class="service-card" data-category="care"><div class="card-top"><span>04</span><span aria-hidden="true">⊕</span></div><h3>Шиномонтаж</h3><p>Услуга указана на сайте компании. Доступность и условия уточняйте при записи.</p><div class="card-footer"><span>Стоимость уточняйте</span><a href="#request" data-service="Шиномонтаж" aria-label="Обсудить шиномонтаж">↗</a></div></article>
+      <article class="service-card" data-category="care"><div class="card-top"><span>05</span><span aria-hidden="true">≈</span></div><h3>Автомойка</h3><p>Формат ухода и доступные программы уточняйте у администратора.</p><div class="card-footer"><span>Стоимость уточняйте</span><a href="#request" data-service="Автомойка" aria-label="Обсудить автомойку">↗</a></div></article>
+      <article class="service-card service-help" data-category="maintenance"><div class="card-top"><span>ЕСТЬ ВОПРОС?</span><span aria-hidden="true">↗</span></div><h3>Не знаете,<br>с чего начать?</h3><p>Опишите, что происходит с автомобилем, в Telegram компании.</p><a class="text-link" href="https://telegram.me/79277129980" target="_blank" rel="noopener noreferrer">Написать в Telegram ↗</a></article>
+    </div>
+    <p class="fine-print" id="service-count" role="status">5 направлений услуг. Числовой прайс в доступном каталоге не подтверждён; цены не указаны намеренно. <a href="https://most-ljuks.clients.site/" target="_blank" rel="noopener noreferrer">Источник: сайт компании ↗</a></p>
+    <details class="source-details"><summary>Электрооборудование и другие работы</summary><p>На предоставленной странице категории «Ремонт электрооборудования» сейчас не отображается перечень работ и цен. Доступность этого направления уточняйте у компании. <a href="https://most-ljuks.clients.site/filter-category/remont-elektrooborudovaniya" target="_blank" rel="noopener noreferrer">Открыть категорию ↗</a></p></details>
+  </section>
+
+  <section class="comparison-section section" id="comparison" aria-labelledby="comparison-title"><div class="wrap">
+    <div class="section-heading"><div><p class="eyebrow">02 / ВНИМАНИЕ К ДЕТАЛЯМ</p><h2 id="comparison-title">РАЗНИЦА<br><em>ВИДНА.</em></h2></div><div class="section-intro"><p>Проведите по изображению, чтобы сравнить две стороны.</p><p class="fine-print">Демонстрация интерфейса на AI-изображениях. Это не реальная работа MOST LUX и не обещание результата.</p></div></div>
+    <div class="comparison" style="--split:50%">
+      <img src="assets/after.jpg" width="880" height="880" loading="lazy" alt="AI-демонстрация: серебристое крыло без повреждений">
+      <div class="before-layer"><img src="assets/before.jpg" width="880" height="880" loading="lazy" alt="AI-демонстрация: то же крыло с вмятиной и царапинами"></div>
+      <span class="compare-label before-label">ДО</span><span class="compare-label after-label">ПОСЛЕ</span>
+      <div class="compare-handle" aria-hidden="true"><span>‹ ›</span></div>
+      <input id="compare-range" type="range" min="0" max="100" value="50" aria-label="Сравнение до и после" aria-describedby="compare-help">
+      <span class="compare-demo">AI / ДЕМОНСТРАЦИОННЫЙ ПРИМЕР</span>
+    </div>
+    <div class="compare-caption"><span>Кузов / иллюстрация восстановления</span><span id="compare-help">Тяните ползунок · на клавиатуре используйте ← и →</span></div>
+  </div></section>
+
+  <section class="section wrap" id="portfolio" aria-labelledby="portfolio-title"><div class="section-heading"><div><p class="eyebrow">03 / ВИЗУАЛЬНЫЙ КОНЦЕПТ</p><h2 id="portfolio-title">В ФОКУСЕ —<br>АВТОМОБИЛЬ.</h2></div><p class="section-intro">Демо-портфолио для будущего сайта. Все изображения созданы с помощью AI. Реальные кейсы компании сюда не добавлены.</p></div>
+    <div class="portfolio-grid">
+      <figure class="portfolio-main"><button class="image-button" data-image="assets/hero.jpg" data-caption="Автомобиль в мастерской — демонстрационное AI-изображение, не помещение MOST LUX." aria-label="Открыть демонстрационное фото автомобиля"><img src="assets/hero.jpg" alt="Демо: графитовый седан в тёмной мастерской" width="1600" height="900" loading="lazy"><span class="image-expand" aria-hidden="true">↗</span></button><figcaption><span>01 / Автомобиль в мастерской</span><small>AI · ДЕМО</small></figcaption></figure>
+      <figure><button class="image-button" data-image="assets/mechanic.jpg" data-caption="Обслуживание автомобиля — демонстрационное AI-изображение, не сотрудник MOST LUX." aria-label="Открыть демонстрационное фото обслуживания"><img src="assets/mechanic.jpg" alt="Демо: руки механика у открытого двигателя" width="1200" height="800" loading="lazy"><span class="image-expand" aria-hidden="true">↗</span></button><figcaption><span>02 / Обслуживание</span><small>AI · ДЕМО</small></figcaption></figure>
+      <figure><button class="image-button" data-image="assets/after.jpg" data-caption="Деталь кузова — демонстрационное AI-изображение, не результат работ MOST LUX." aria-label="Открыть демонстрационное фото кузова"><img src="assets/after.jpg" alt="Демо: деталь серебристого кузова" width="880" height="880" loading="lazy"><span class="image-expand" aria-hidden="true">↗</span></button><figcaption><span>03 / Детали кузова</span><small>AI · ДЕМО</small></figcaption></figure>
+    </div>
+  </section>
+
+  <section class="section facts-section"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">04 / О СЕРВИСЕ</p><h2>ТО, ЧТО<br>ИМЕЕТ ЗНАЧЕНИЕ.</h2></div><p class="section-intro">Условия, которые компания указывает на своём сайте. Подтверждено по источнику на 5 ноября 2026 года.</p></div><div class="facts-grid"><article><span class="fact-icon" aria-hidden="true">01 / ↗</span><h3>Помощь с запчастями</h3><p>Компания заявляет помощь в поиске запчастей. Наличие и сроки уточняйте отдельно.</p></article><article><span class="fact-icon" aria-hidden="true">02 / ✓</span><h3>Гарантия на работы</h3><p>Заявлена на сайте компании. Срок, объём и условия необходимо согласовать с сервисом.</p></article><article><span class="fact-icon" aria-hidden="true">03 / ＋</span><h3>Удобство визита</h3><p>Указаны предварительная запись, парковка и возможность оплаты картой.</p></article></div><a class="text-link" href="https://most-ljuks.clients.site/" target="_blank" rel="noopener noreferrer">Проверить информацию на сайте компании ↗</a></div></section>
+
+  <section class="section wrap" id="reviews" aria-labelledby="reviews-title"><div class="section-heading"><div><p class="eyebrow">05 / ОБРАТНАЯ СВЯЗЬ</p><h2 id="reviews-title">СЛОВО<br>КЛИЕНТАМ.</h2></div><div class="rating-summary"><strong>4,6<span>/ 5</span></strong><p>Рейтинг на сайте компании<br><small>Снимок на 05.11.2026 · может измениться</small></p><a class="text-link" href="https://yandex.ru/profile/85059401347" target="_blank" rel="noopener noreferrer">Отзывы на Яндекс Картах ↗</a></div></div>
+    <div class="review-grid"><article class="review"><p class="review-kind">ПЕРЕСКАЗ ОТЗЫВА</p><p>Карина отмечает, что неисправность нашли быстро, а сотрудники были вежливы и отзывчивы.</p><div class="review-author"><span class="avatar" aria-hidden="true">К</span><div><h3>Карина Кочеткова</h3><span>30 октября · год не указан</span></div></div></article><article class="review"><p class="review-kind">ПЕРЕСКАЗ ОТЗЫВА</p><p>Роман рассказывает о замене тормозного цилиндра и понятных объяснениях механика во время ремонта.</p><div class="review-author"><span class="avatar" aria-hidden="true">Р</span><div><h3>Роман Абрамович</h3><span>28 июля · год не указан</span></div></div></article><article class="review"><p class="review-kind">ПЕРЕСКАЗ ОТЗЫВА</p><p>Владимир хвалит отношение на приёмке, согласование работ и обратную связь в процессе ремонта.</p><div class="review-author"><span class="avatar" aria-hidden="true">В</span><div><h3>Владимир Ч.</h3><span>24 июля · год не указан</span></div></div></article></div><p class="fine-print">Краткие пересказы опубликованных отзывов, без изменения смысла. <a href="https://most-ljuks.clients.site/#reviews" target="_blank" rel="noopener noreferrer">Источник — сайт компании ↗</a>. Рейтинг в карточке Яндекс Карт может отличаться; отзывы не проверены WebNat независимо.</p>
+  </section>
+
+  <section class="request-section section" id="request" aria-labelledby="request-title"><div class="wrap request-grid"><div><p class="eyebrow">06 / СЛЕДУЮЩИЙ ШАГ</p><h2 id="request-title">НАЧНЁМ<br>С ВАШЕГО<br><em>ВОПРОСА.</em></h2><p class="section-intro">Для реальной записи позвоните или напишите в Telegram компании.</p><a class="request-phone" href="tel:+78463004555">+7 (846) 300-45-55 ↗</a><a class="text-link" href="https://telegram.me/79277129980" target="_blank" rel="noopener noreferrer">Telegram компании ↗</a></div>
+    <form id="demo-form"><div class="demo-tag">ДЕМО-ФОРМА · БЕЗ ОТПРАВКИ</div><h3>Обсудить задачу</h3><p class="form-description">Проверьте, как будет выглядеть заявка. Данные никуда не передаются и не сохраняются. Можно использовать вымышленные данные.</p>
+      <label for="client-name">Как к вам обращаться</label><input id="client-name" name="name" type="text" maxlength="80" placeholder="Ваше имя" required autocomplete="off">
+      <label for="client-phone">Телефон</label><input id="client-phone" name="phone" type="tel" inputmode="tel" placeholder="+7 (___) ___-__-__" pattern="[+0-9() .\-]{10,22}" minlength="10" maxlength="22" required autocomplete="off" aria-describedby="phone-help"><small id="phone-help">10–15 цифр, допустимы +, пробелы, скобки и дефисы.</small>
+      <label for="service-choice">Направление</label><select id="service-choice" name="service"><option>Нужна консультация</option><option>Техническое обслуживание</option><option>Кузовной ремонт</option><option>Удаление вмятин без покраски</option><option>Шиномонтаж</option><option>Автомойка</option></select>
+      <label for="client-message">Автомобиль и задача <span>(необязательно)</span></label><textarea id="client-message" name="message" rows="3" maxlength="1000" placeholder="Марка, модель, что нужно сделать"></textarea>
+      <button class="button primary" type="submit">Проверить демо-заявку <span aria-hidden="true">↗</span></button><p id="form-status" role="status" tabindex="-1"></p>
+    </form></div></section>
+
+  <section class="section wrap" id="contacts" aria-labelledby="contacts-title"><p class="eyebrow">07 / НА СВЯЗИ</p><div class="contact-grid"><div><h2 id="contacts-title">УВИДИМСЯ<br>В СЕРВИСЕ.</h2><address>Самара,<br>проезд Мальцева, 3</address><p class="hours">Пн–пт: 09:00–18:00<br>Сб–вс: выходные</p><p class="fine-print">График указан в данных сайта компании на 05.11.2026. Перед визитом уточните время по телефону.</p><a class="button outline" href="https://yandex.ru/maps/?rtext=~53.188852,50.245597&rtt=auto" target="_blank" rel="noopener noreferrer">Построить маршрут ↗</a></div><div class="contact-panel"><span class="eyebrow">MOST LUX / САМАРА</span><a class="big-phone" href="tel:+78463004555">+7 (846)<br>300-45-55 <span aria-hidden="true">↗</span></a><a class="contact-row" href="https://telegram.me/79277129980" target="_blank" rel="noopener noreferrer"><span>Telegram компании</span><span aria-hidden="true">↗</span></a><a class="contact-row" href="https://yandex.ru/profile/85059401347" target="_blank" rel="noopener noreferrer"><span>Карточка на Яндекс Картах</span><span aria-hidden="true">↗</span></a><a class="contact-row" href="https://most-ljuks.clients.site/" target="_blank" rel="noopener noreferrer"><span>Действующий сайт компании</span><span aria-hidden="true">↗</span></a></div></div></section>
+</main>
+<footer class="footer wrap"><div class="footer-top"><span class="footer-brand">MOST LUX<span> / WEBNAT</span></span><a href="#top">Наверх ↑</a></div><p><strong>Неофициальный дизайн-концепт WebNat.</strong> Создан для демонстрации дизайна. Не является официальным сайтом MOST LUX и не подтверждает сотрудничество с компанией. Заявки через этот сайт не принимаются.</p><p>Логотип принадлежит его правообладателю. Все фотографии — демонстрационные AI-изображения, не реальные работы или помещения MOST LUX. Сведения проверены 5 ноября 2026 года по открытому сайту компании; актуальность уточняйте напрямую.</p><div class="footer-bottom"><span>© 2026 WebNat · Дизайн-концепт</span><a href="https://github.com/nataliya1207/most-lux-demo" target="_blank" rel="noopener noreferrer">Код проекта ↗</a></div></footer>
+<div class="mobile-actions" aria-label="Быстрая связь"><a href="tel:+78463004555">Позвонить ↗</a><a href="https://telegram.me/79277129980" target="_blank" rel="noopener noreferrer">Telegram ↗</a></div>
+<dialog id="photo-dialog" aria-labelledby="photo-caption"><button class="dialog-close" aria-label="Закрыть фото">Закрыть ×</button><img id="dialog-image" alt=""><p id="photo-caption"></p></dialog>
+</body></html>
