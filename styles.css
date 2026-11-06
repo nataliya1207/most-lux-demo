@@ -18,3 +18,42 @@ address{font-style:normal;font-size:24px;line-height:1.4;margin:30px 0 22px}.hou
 .marquee-unit{min-width:100vw;justify-content:space-around}.filters button,.case-tabs button,.contact-row{font-weight:500}
 @media(min-width:600px){h2{font-weight:600}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.js .reveal,.js .hero-line,.js .hero-description,.js .actions{opacity:1!important;transform:none!important}.js .hero-image{transform:none!important}.compare-handle>span::before{opacity:0}.marquee-track{transform:none}}
+
+/* Local review: gallery and filtered grid. */
+.gallery-open{position:fixed;top:var(--gallery-scroll-top);left:0;right:0;overflow:hidden}
+.gallery-stage{background:#111;touch-action:pan-y;user-select:none}
+.gallery-stage img{display:block;height: min(58dvh,640px);width:100%;object-fit:contain;max-height:none}
+.gallery-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px}
+.gallery-controls button{min-height:44px;padding:10px 18px;border:1px solid #777;background:#222;color:white}
+#gallery-position{font-size:14px;font-variant-numeric:tabular-nums}
+dialog .gallery-help{font-size:12px;color:#ccc;margin-top:10px}
+@media(min-width:900px){.services-grid.is-filtered{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:599px){#photo-dialog{padding:12px}.gallery-stage img{height:45dvh}.gallery-controls button{padding:10px 14px}}
+
+/* Keep the original stacked portfolio; only reduce mobile image height. */
+@media(max-width:760px){
+ .portfolio-grid .image-button img{height:clamp(170px,50vw,220px);aspect-ratio:auto;object-fit:cover}
+}
+
+/* Gallery controls follow the photo, with a clear touch instruction. */
+@media(min-width:761px){nav a{font-size:14px}}
+@media(min-width:1100px){nav a{font-size:16px}.header-phone{font-size:15px}}
+#photo-dialog{position:relative;border-radius:16px;padding:16px;background:#151515;border-color:#ffffff30}
+#photo-dialog .gallery-stage{border-radius:8px;overflow:hidden}
+#photo-dialog .gallery-controls{margin:12px 0 0;justify-content:center}
+#photo-dialog .gallery-controls button{position:absolute;top:calc(50% - 40px);width:46px;height:46px;min-height:46px;padding:11px;border-radius:50%;border:1px solid #ffffff60;background:#101010c9;box-shadow:0 2px 12px #0006;display:grid;place-items:center;z-index:2}
+#photo-dialog .gallery-prev{left:26px}
+#photo-dialog .gallery-next{right:26px}
+#photo-dialog .gallery-controls button:hover{background:#e42a35;border-color:#e42a35}
+#photo-dialog .gallery-controls svg{width:22px;height:22px}
+#photo-dialog .gallery-next svg{transform:rotate(180deg)}
+#gallery-position{background:#ffffff10;border:1px solid #ffffff20;border-radius:30px;padding:3px 14px;letter-spacing:.1em}
+#photo-dialog #photo-caption{text-align:center;margin:10px 0 0}
+#photo-dialog .gallery-help{text-align:center;margin:8px 0 0}
+.gallery-touch-hint{display:none}
+@media(max-width:760px){
+ #photo-dialog .gallery-touch-hint{display:block;color:#f5f4f1;font-size:13px}
+ #photo-dialog .gallery-key-hint{display:none}
+ #photo-dialog .gallery-controls button{width:42px;height:42px;min-height:42px;padding:9px;top:calc(50% - 40px)}
+ #photo-dialog .gallery-prev{left:20px}#photo-dialog .gallery-next{right:20px}
+}

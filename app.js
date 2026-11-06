@@ -33,6 +33,7 @@ function setFilter(button){
     card.hidden=button.dataset.filter!=='all'&&card.dataset.category!==button.dataset.filter;
     if(!card.hidden)card.classList.add('is-visible');
   });
+  document.querySelector('.services-grid').classList.toggle('is-filtered',button.dataset.filter!=='all');
   count.textContent=`Показано направлений: ${cards.filter(card=>!card.hidden).length}. Полный прайс подключим из вашего каталога.`;
 }
 document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>setFilter(button)));
@@ -147,19 +148,55 @@ document.querySelector('#form-reset').addEventListener('click',()=>{
 });
 // Demo only: no handler, requests, analytics or persistent storage.
 
-const dialog=document.querySelector('#photo-dialog');let opener=null;
-document.querySelectorAll('[data-image]').forEach(button=>button.addEventListener('click',()=>{
-  opener=button;const image=document.querySelector('#dialog-image');
-  image.src=button.dataset.image;image.alt=button.dataset.caption;
-  document.querySelector('#photo-caption').textContent=button.dataset.caption;dialog.showModal();
+const dialog=document.querySelector('#photo-dialog');
+const galleryButtons=[...document.querySelectorAll('[data-image]')];
+const galleryImage=document.querySelector('#dialog-image');
+let opener=null,galleryIndex=0,swipeStart=null;
+let galleryScroll={x:0,y:0};
+function showPhoto(index){
+  galleryIndex=(index+galleryButtons.length)%galleryButtons.length;
+  const item=galleryButtons[galleryIndex];
+  galleryImage.src=item.dataset.image;galleryImage.alt=item.dataset.caption;
+  document.querySelector('#photo-caption').textContent=item.dataset.caption;
+  document.querySelector('#gallery-position').textContent=(galleryIndex+1)+' / '+galleryButtons.length;
+}
+galleryButtons.forEach((button,index)=>button.addEventListener('click',()=>{
+  opener=button;galleryScroll={x:window.scrollX,y:window.scrollY};
+  showPhoto(index);
+  // Keep the document's visual position while the native dialog takes focus.
+  document.body.style.setProperty('--gallery-scroll-top',`-${galleryScroll.y}px`);
+  document.body.classList.add('gallery-open');
+  dialog.showModal();
+  document.querySelector('.dialog-close').focus({preventScroll:true});
 }));
+document.querySelector('.gallery-prev').addEventListener('click',()=>showPhoto(galleryIndex-1));
+document.querySelector('.gallery-next').addEventListener('click',()=>showPhoto(galleryIndex+1));
+dialog.addEventListener('keydown',event=>{
+  if(event.key==='ArrowLeft'||event.key==='ArrowRight'){
+    event.preventDefault();showPhoto(galleryIndex+(event.key==='ArrowRight'?1:-1));
+  }
+});
+const stage=document.querySelector('.gallery-stage');
+stage.addEventListener('pointerdown',event=>{
+  if(event.isPrimary&&event.pointerType!=='mouse'){swipeStart={x:event.clientX,y:event.clientY};stage.setPointerCapture(event.pointerId);}
+});
+stage.addEventListener('pointerup',event=>{
+  if(!swipeStart)return;
+  const dx=event.clientX-swipeStart.x,dy=event.clientY-swipeStart.y;swipeStart=null;
+  if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.3)showPhoto(galleryIndex+(dx<0?1:-1));
+});
+stage.addEventListener('pointercancel',()=>{swipeStart=null;});
 document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('click',event=>{
-  if(event.target!==dialog)return;
-  const rect=dialog.getBoundingClientRect();
+  if(event.target!==dialog)return;const rect=dialog.getBoundingClientRect();
   if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)dialog.close();
 });
-dialog.addEventListener('close',()=>opener?.focus({preventScroll:true}));
+dialog.addEventListener('close',()=>{
+  document.body.classList.remove('gallery-open');
+  document.body.style.removeProperty('--gallery-scroll-top');
+  window.scrollTo({left:galleryScroll.x,top:galleryScroll.y,behavior:'instant'});
+  swipeStart=null;opener?.focus({preventScroll:true});
+});
 
 const revealElements=[...document.querySelectorAll('.section-heading,.service-card,.portfolio-grid figure,.review,.facts-grid article,#contacts>.eyebrow,#contacts h2')];
 revealElements.forEach(element=>{
